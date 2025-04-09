@@ -94,7 +94,7 @@ AFRAME.registerComponent('textbox', {
 
   createMesh(width, height, color, isBorder, opacity = 1) {
     const radius = 0.03 * this.el.getAttribute('sizeCoef')
-    const shape = new THREE.Shape()
+    const shape = new AFRAME.THREE.Shape()
 
     shape.moveTo(-width / 2 + radius, -height / 2)
     shape.lineTo(width / 2 - radius, -height / 2)
@@ -106,13 +106,13 @@ AFRAME.registerComponent('textbox', {
     shape.lineTo(-width / 2, -height / 2 + radius)
     shape.quadraticCurveTo(-width / 2, -height / 2, -width / 2 + radius, -height / 2)
 
-    const geometry = new THREE.ShapeGeometry(shape)
-    const material = new THREE.MeshBasicMaterial({
+    const geometry = new AFRAME.THREE.ShapeGeometry(shape)
+    const material = new AFRAME.THREE.MeshBasicMaterial({
       color: color,
       opacity: opacity,
       transparent: opacity < 1,
     })
-    const mesh = new THREE.Mesh(geometry, material)
+    const mesh = new AFRAME.THREE.Mesh(geometry, material)
 
     if (isBorder) {
       mesh.position.z = -0.002

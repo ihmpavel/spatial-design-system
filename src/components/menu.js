@@ -91,7 +91,7 @@ AFRAME.registerComponent('menu', {
 
     // prevent menu from being too small
     if (targetScale.x < 0.001 || targetScale.y < 0.001 || targetScale.z < 0.001) {
-      targetScale = new THREE.Vector3(1, 1, 1)
+      targetScale = new AFRAME.THREE.Vector3(1, 1, 1)
     }
 
     this.el.removeAttribute('animation__scale')
@@ -471,8 +471,8 @@ AFRAME.registerComponent('grid', {
     let yIndex = 0
 
     for (const item of this.gridItems) {
-      const itemBbox = new THREE.Box3().setFromObject(item.object3D)
-      const itemBboxSize = itemBbox.getSize(new THREE.Vector3())
+      const itemBbox = new AFRAME.THREE.Box3().setFromObject(item.object3D)
+      const itemBboxSize = itemBbox.getSize(new AFRAME.THREE.Vector3())
 
       item.object3D.position.x = itemBaseXPosition + itemXOffset * xIndex
       item.object3D.position.y = itemBaseYPosition + itemYOffset * yIndex

@@ -360,8 +360,8 @@ AFRAME.registerComponent('button', {
   },
 
   animateButtonOnClick() {
-    const originalColor = new THREE.Color(this.data.primary)
-    const darkerColor = new THREE.Color('#666666')
+    const originalColor = new AFRAME.THREE.Color(this.data.primary)
+    const darkerColor = new AFRAME.THREE.Color('#666666')
     const buttonMesh = this.buttonMesh
     const shadowMesh = this.shadowMesh
 

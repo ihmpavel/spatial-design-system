@@ -1,0 +1,32 @@
+name: Checks
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  pull-requests: write
+  repository-projects: read
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.draft == false }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: "npm"
+          node-version: 20
+
+      - name: Run checks
+        run: |
+          npm run lint

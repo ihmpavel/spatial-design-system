@@ -1,7 +1,4 @@
-/** @typedef {import('aframe').Scene} AScene */
-/** @typedef {import('aframe').Entity} AEntity */
-
-import { THREE } from 'aframe'
+import * as AFRAME from 'aframe'
 
 export function isObjectTrulyVisible(el) {
   let element = el
@@ -34,7 +31,7 @@ export function stringifyForHTML(obj) {
 }
 
 export function createRoundedSquareShape(size, borderRadius) {
-  const shape = new THREE.Shape()
+  const shape = new AFRAME.THREE.Shape()
   shape.moveTo(-size + borderRadius, -size)
   shape.lineTo(size - borderRadius, -size)
   shape.quadraticCurveTo(size, -size, size, -size + borderRadius)
@@ -48,7 +45,7 @@ export function createRoundedSquareShape(size, borderRadius) {
 }
 
 export function createRoundedRectShape(width, height, radius) {
-  const shape = new THREE.Shape()
+  const shape = new AFRAME.THREE.Shape()
   shape.moveTo(-width / 2 + radius, -height / 2)
   shape.lineTo(width / 2 - radius, -height / 2)
   shape.quadraticCurveTo(width / 2, -height / 2, width / 2, -height / 2 + radius)
@@ -178,7 +175,7 @@ export function onLoaded(entity, callback) {
  * or an empty bounding box, if the entity or its mesh is not defined.
  */
 export function computeBbox(entity) {
-  const defaultBbox = new THREE.Box3().makeEmpty()
+  const defaultBbox = new AFRAME.THREE.Box3().makeEmpty()
 
   if (!entity) {
     console.warn(
@@ -200,7 +197,7 @@ export function computeBbox(entity) {
   entity.object3D.rotation.set(0, 0, 0) // reset rotation to compute correct original bbox
   entity.object3D.updateMatrixWorld(true)
 
-  const bbox = new THREE.Box3().setFromObject(mesh)
+  const bbox = new AFRAME.THREE.Box3().setFromObject(mesh)
   entity.object3D.rotation.copy(originalRotation)
 
   return bbox

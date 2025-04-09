@@ -35,13 +35,13 @@ Use it in your A-FRAME scene:
 
 ```html
 <a-ar-button
-        position="0 1.6 -3"
-        size="medium"
-        content="Click me"
-        uppercase=true
-        rounded=true
-        outlined=true
-        billboard
+  position="0 1.6 -3"
+  size="medium"
+  content="Click me"
+  uppercase=true
+  rounded=true
+  outlined=true
+  billboard
 ></a-ar-button>
 ```
 

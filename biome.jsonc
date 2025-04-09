@@ -17,8 +17,7 @@
       "quoteProperties": "asNeeded",
       "lineWidth": 100,
       "trailingCommas": "es5"
-    },
-    "globals": ["THREE"]
+    }
   },
   "css": {
     "formatter": {
