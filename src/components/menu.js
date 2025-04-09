@@ -17,6 +17,7 @@ AFRAME.registerComponent('menu', {
     textsize: { type: 'number', default: 1.5 },
     iconsize: { type: 'number', default: 1.5 },
     backbutton: { type: 'boolean', default: false },
+    backbuttonimage: { type: 'string', default: '/public/arrow_back_white.png' },
     showtext: { type: 'boolean', default: true },
   },
 
@@ -337,7 +338,7 @@ AFRAME.registerComponent('menu', {
       arrowback.setAttribute('class', 'back-button clickable')
 
       const arrowbackicon = document.createElement('a-image')
-      arrowbackicon.setAttribute('src', '/assets/arrow_back_white.png')
+      arrowbackicon.setAttribute('src', this.data.backbuttonimage)
       arrowbackicon.setAttribute('height', 0.22 * circleRadius)
       arrowbackicon.setAttribute('width', 0.22 * circleRadius)
       arrowbackicon.setAttribute('position', '0 0 0.02')

@@ -1,6 +1,7 @@
 {
   "name": "spatial-design-system",
   "version": "1.6.9",
+  "types": "./types/index.d.ts",
   "files": [
     "/components",
     "/primitives",
