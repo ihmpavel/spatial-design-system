@@ -10,16 +10,19 @@
     "/umd"
   ],
   "scripts": {
+    "build": "vite build",
     "demo": "vite demo",
-    "dev": "vite debug/",
-    "build": "vite build"
+    "dev": "vite debug",
+    "lint": "npx @biomejs/biome check **/*.js",
+    "lint:fix": "npx @biomejs/biome check --write **/*.js"
   },
   "dependencies": {
-    "@tweenjs/tween.js": "^23.1.1",
+    "@tweenjs/tween.js": "^25.0.0",
     "aframe": "~1.5.0"
   },
   "devDependencies": {
-    "vite": "^6.0.11"
+    "@biomejs/biome": "^1.9.4",
+    "vite": "^6.2.5"
   },
   "overrides": {
     "three-bmfont-text": "@spatialhub/three-bmfont-text"
