@@ -356,19 +356,10 @@ AFRAME.registerComponent('textbox', {
     const toggleListeningToKeydown = activate => {
       if (activate) {
         document.addEventListener('keydown', focusInput)
-        if (userEl) {
-          userEl.setAttribute('wasd-controls', 'enabled', false)
-        }
-
-        // inputEl.style.opacity = 1;
-        // inputEl.style.pointerEvents = 'auto';
-        // inputEl.focus();
+        userEl?.setAttribute('wasd-controls', 'enabled', false)
       } else {
         document.removeEventListener('keydown', focusInput)
-        if (userEl) {
-          userEl.setAttribute('wasd-controls', 'enabled', true)
-        }
-
+        userEl?.setAttribute('wasd-controls', 'enabled', true)
         inputEl.style.opacity = 0
         inputEl.style.pointerEvents = 'none'
       }

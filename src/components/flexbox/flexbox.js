@@ -358,7 +358,6 @@ AFRAME.registerComponent('flexbox', {
   handleColumnBreakpoint() {
     this.el.addEventListener('breakpoint-changed', () => {
       this.initializeContainer()
-      // this.applyColumnWidths();
       this.setItemsLayout()
     })
   },

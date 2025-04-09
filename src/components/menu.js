@@ -26,7 +26,6 @@ AFRAME.registerComponent('menu', {
 
     this.originalScale = this.el.object3D.scale.clone()
 
-    // this.el.setAttribute("material", {color: this.data.primary, opacity: this.data.variant === "transparent" ? 0.1 : 0.35})
     this.el.setAttribute('material', { color: this.data.primary, opacity: this.data.menuopacity })
     this.setSize()
 

@@ -81,7 +81,6 @@ AFRAME.registerComponent('virtualKeyboard', {
     keyboard.setAttribute('id', 'keyboard')
     keyboard.setAttribute('billboard', { value: true })
     keyboard.setAttribute('auto-scale', { value: true })
-    // keyboard.setAttribute('fit-into-fov', {percentage: 40})
 
     // Creating the function for keys creation
     const createKey = (key, _xPos, yPos, size) => {
